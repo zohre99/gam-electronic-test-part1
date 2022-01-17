@@ -11,7 +11,6 @@ import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -25,7 +24,6 @@ public class DailyWorkService {
     GroupMemberService groupMemberService;
 
     public DailyWorkResponse save(DailyWorkRequest dailyWorkRequest) throws RuntimeException, InvocationTargetException, IllegalAccessException {
-
         // This check validation is define in entity column definition
         if (!checkSaveValidation(dailyWorkRequest))
             throw new RuntimeException("Enter Valid Size for Strings");
@@ -67,4 +65,5 @@ public class DailyWorkService {
     public DailyWorkResponse getById(Long id) {
         return dao.getById(id);
     }
+    
 }
